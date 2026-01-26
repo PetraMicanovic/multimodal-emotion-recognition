@@ -1,0 +1,30 @@
+# Core
+python>=3.8
+
+# Deep Learning
+torch
+torchvision
+torchaudio
+torchcodec
+
+# Hugging Face / NLP
+transformers
+sentencepiece
+datasets
+accelerate
+
+# Audio processing
+librosa
+soundfile
+
+# Data handling
+numpy
+pandas
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+tqdm

@@ -3,6 +3,10 @@
 This repository contains experiments for emotion recognition using
 multimodal and unimodal models.
 
+## Environment Notes
+Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. Specific package versions may vary depending on the execution environment.
+
+
 ## Datasets
 
 - **MELD**  
