@@ -13,8 +13,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
   [Multimodal EmotionLines Dataset](https://affective-meld.github.io/) used for training and evaluation of multimodal emotion recognition models (audio, text, video).
 
 - **SEAC**  
-  [Serbian Emotional Audio Corpus](https://www.ktios.ftn.uns.ac.rs/sadapt/SADAPT_publications.html) used for audio-only emotion recognition
-  experiments. Models trained on MELD audio are used for initialization.
+  [Serbian Emotional Amateur Cellphone Speech Corpus (SEAC)](https://www.ktios.ftn.uns.ac.rs/sadapt/SADAPT_publications.html) used for audio-only emotion recognition experiments. Models trained on MELD audio are used for initialization.
 
   ## Dataset Licenses
   All datasets used in this repository are subject to their original licenses and are not distributed here.
@@ -36,6 +35,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 | Dataset | Modality       | Architecture                | Class Weights | HF Model |
 |--------|----------------|-----------------------------|---------------|----------|
 | MELD   | Audio          | Baseline (no pooling)       | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-baseline |
+| MELD   | Text           | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-baseline |
 
 
 ## Notes
