@@ -38,6 +38,16 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 | MELD   | Text           | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-baseline |
 | MELD   | Early Fusion   | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-baseline |
 
+### v0.1-baseline-meld
+
+This tag includes:
+- notebooks/MELD/01_baseline_no_pooling.ipynb
+- Audio baseline model (no pooling)
+- Text baseline model (BERT embeddings)
+- Early fusion baseline model (feature-level fusion)
+
+No class weighting, encoder fine-tuning, or advanced fusion strategies are included.
+
 
 ## Notes
 Datasets and trained model weights are not included in this repository.
