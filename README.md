@@ -41,16 +41,19 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 | MELD   | Text           | Baseline                    | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-class-weights |
 | MELD   | Early Fusion   | Temporal Pooling            | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-temporal |
 
-### v0.1-baseline-meld
-
-This tag includes:
-- notebooks/MELD/01_baseline_no_pooling.ipynb
+## Versions
+ 
+-**v0.1-baseline-meld**
 - Audio baseline model (no pooling)
 - Text baseline model (BERT embeddings)
 - Early fusion baseline model (feature-level fusion)
 
 No class weighting, encoder fine-tuning, or advanced fusion strategies are included.
 
+- **v0.2 – meld-temporal-pooling**
+  - Temporal pooling over audio features (mean + std)
+  - Class-weighted CrossEntropy loss
+  - Improved robustness to class imbalance
 
 ## Notes
 Datasets and trained model weights are not included in this repository.
