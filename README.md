@@ -36,6 +36,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 |--------|----------------|-----------------------------|---------------|----------|
 | MELD   | Audio          | Baseline (no pooling)       | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-baseline |
 | MELD   | Text           | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-baseline |
+| MELD   | Early Fusion   | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-baseline |
 
 
 ## Notes
