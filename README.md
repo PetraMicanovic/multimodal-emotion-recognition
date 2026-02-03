@@ -43,7 +43,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 
 ## Versions
  
--**v0.1-baseline-meld**
+- **v0.1-baseline-meld**
 - Audio baseline model (no pooling)
 - Text baseline model (BERT embeddings)
 - Early fusion baseline model (feature-level fusion)
