@@ -55,6 +55,14 @@ No class weighting, encoder fine-tuning, or advanced fusion strategies are inclu
   - Class-weighted CrossEntropy loss
   - Improved robustness to class imbalance
 
+- **v0.3 – cross-dataset-evaluation**
+  - Audio model evaluated on **unseen SEAC dataset** (cross-dataset generalization test)
+  - Evaluation performed on **two unseen speakers** (male + female)
+  - Extended confusion matrix and F1-score visualizations for:
+    - Audio model
+    - Text model
+  - Provides baseline before **speaker fine-tuning / domain adaptation**
+
 ## Notes
 Datasets and trained model weights are not included in this repository.
 
