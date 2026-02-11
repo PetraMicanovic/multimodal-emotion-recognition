@@ -32,19 +32,20 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 - `models/` – documentation of trained models (no weights)
 
 ### Pretrained Models
-| Dataset | Modality       | Architecture                | Class Weights | HF Model |
-|--------|----------------|-----------------------------|---------------|----------|
-| MELD   | Audio          | Baseline (no pooling)       | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-baseline |
-| MELD   | Text           | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-baseline |
-| MELD   | Early Fusion   | Baseline                    | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-baseline |
-| MELD   | Audio          | Temporal Pooling            | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-temporal |
-| MELD   | Text           | Baseline                    | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-class-weights |
-| MELD   | Early Fusion   | Temporal Pooling            | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-temporal |
+| Dataset | Modality       | Architecture                   | Class Weights | HF Model |
+|--------|----------------|---------------------------------|---------------|----------|
+| MELD   | Audio          | Baseline                        | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-baseline |
+| MELD   | Text           | Baseline                        | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-baseline |
+| MELD   | Early Fusion   | Baseline                        | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-baseline |
+| MELD   | Audio          | Temporal Pooling                | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-audio-temporal |
+| MELD   | Text           | Baseline                        | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-class-weights |
+| MELD   | Early Fusion   | Temporal Pooling                | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-temporal |
+| SEAC   | Audio          | Baseline                        | ❌            | 🔗 https://huggingface.co/PetraMicanovic/audio_meld_seac_finetuned |
 
 ## Versions
  
 - **v0.1-baseline-meld**
-  - Audio baseline model (no pooling)
+  - Audio baseline model (no temporal pooling)
   - Text baseline model (BERT embeddings)
   - Early fusion baseline model (feature-level fusion)
 
