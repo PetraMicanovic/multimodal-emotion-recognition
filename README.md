@@ -41,6 +41,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 | MELD   | Text           | Baseline                        | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-text-class-weights |
 | MELD   | Early Fusion   | Temporal Pooling                | ✅            | 🔗 https://huggingface.co/PetraMicanovic/meld-early-fusion-temporal |
 | SEAC   | Audio          | Baseline                        | ❌            | 🔗 https://huggingface.co/PetraMicanovic/audio_meld_seac_finetuned |
+| SEAC   | Early Fusion   | Temporal Pooling                | ❌            | 🔗 https://huggingface.co/PetraMicanovic/meld-to-seac-audio-emotion-recognition-temporal-pooling-class-weights |
 
 ## Versions
  
