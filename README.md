@@ -4,16 +4,17 @@ This repository contains experiments for emotion recognition using
 multimodal and unimodal models.
 
 ## Environment Notes
-Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. Specific package versions may vary depending on the execution environment.
+Experiments were conducted in **Google Colab** using a CUDA-enabled PyTorch setup. Specific package versions may vary depending on the execution environment.
 
 
 ## Datasets
 
 - **MELD**  
-  [Multimodal EmotionLines Dataset](https://affective-meld.github.io/) used for training and evaluation of multimodal emotion recognition models (audio, text, video).
+  [Multimodal EmotionLines Dataset](https://affective-meld.github.io/) Used for training and evaluation of multimodal emotion recognition models (audio + text).
 
 - **SEAC**  
-  [Serbian Emotional Amateur Cellphone Speech Corpus (SEAC)](https://www.ktios.ftn.uns.ac.rs/sadapt/SADAPT_publications.html) used for audio-only emotion recognition experiments. Models trained on MELD audio are used for initialization.
+  [Serbian Emotional Amateur Cellphone Speech Corpus (SEAC)](https://www.ktios.ftn.uns.ac.rs/sadapt/SADAPT_publications.html) 
+  Used for **audio-only cross-dataset and domain adaptation experiments**. Audio models trained on MELD are used for initialization.
 
   ## Dataset Licenses
   All datasets used in this repository are subject to their original licenses and are not distributed here.
@@ -22,14 +23,23 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
 
 ### MELD
 - Baseline multimodal model (no temporal pooling)
-- Multimodal model with temporal pooling
+- Audio model with temporal pooling (mean + std)
+- Class-weighted training
+- Text and Early Fusion baselines
 
-### SR
+### SEAC (Cross-Dataset + Domain Adaptation)
 - Audio-only model initialized from the MELD audio baseline
+- Speaker-split evaluation setup
+    - Two unseen speakers (one male, one female) used for **zero-shot evaluation**
+    - Remaining speakers used for **fine-tuning**
+- Fine-tuned audio model evaluation
+    - Tested again on the two held-out Serbian speakers(**cross-speaker evaluation**)
+    - Tested on the original MELD test set (**cross-dataset back-transfer**)
 
 ## Structure
 - `notebooks/` – experiment notebooks
-- `models/` – documentation of trained models (no weights)
+- `models/` – trained model files (PyTorch weights and configuration)
+
 
 ### Pretrained Models
 | Dataset | Modality       | Architecture                   | Class Weights | HF Model |
@@ -49,8 +59,7 @@ Experiments were conducted in Google Colab using a CUDA-enabled PyTorch setup. S
   - Audio baseline model (no temporal pooling)
   - Text baseline model (BERT embeddings)
   - Early fusion baseline model (feature-level fusion)
-
-No class weighting, encoder fine-tuning, or advanced fusion strategies are included.
+  - No class weighting, encoder fine-tuning, or advanced fusion strategies are included.
 
 - **v0.2 – meld-temporal-pooling**
   - Temporal pooling over audio features (mean + std)
@@ -65,6 +74,28 @@ No class weighting, encoder fine-tuning, or advanced fusion strategies are inclu
     - Text model
   - Provides baseline before **speaker fine-tuning / domain adaptation**
 
-## Notes
-Datasets and trained model weights are not included in this repository.
+- **v0.4 – seac-finetuning-and-domain-adaptation**
+  - Audio model fine-tuned on the **SEAC dataset using remaining speakers** (domain adaptation)
+  - Evaluated on:
+    - SEAC speakers used for testing (**cross-speaker evaluation**)
+    - Original MELD test set (**cross-dataset back-transfer**)
+  - Added detailed evaluation visualizations:
+    - Confusion matrix 
+    - Per-class F1-score plots
+  - Provides comparison between:
+    - MELD-trained audio models (**with and without temporal pooling and class weighting**)
+    - SEAC fine-tuned audio models (**with and without temporal pooling and class weighting**)
 
+## Notes
+
+- Encoder: **Wav2Vec2 (frozen)**
+- Temporal pooling = mean + standard deviation
+- Sampling rate: **16 kHz**
+- Evaluation metrics: Accuracy + Weighted F1
+- Confusion matrix includes counts and row-normalized percentages
+
+---
+
+## License
+
+MIT
