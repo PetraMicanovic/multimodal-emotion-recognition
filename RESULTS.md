@@ -192,9 +192,9 @@ Fine-tuned SEAC models were evaluated back on the original MELD test set to asse
 
 # Visualizations
 
-Key visualizations included in this repository:
+- Key visualizations included in this repository:
     - Confusion matrices (baseline, TP+CW, fine-tuned, back-transfer)
     - Per-class F1 comparisons across MELD models
     - Cross-dataset and fine-tuning performance comparisons
-Additional detailed plots are available in experiment notebooks.
+- Additional detailed plots are available in experiment notebooks.
 ---
