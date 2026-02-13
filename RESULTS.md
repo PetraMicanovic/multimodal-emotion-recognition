@@ -26,12 +26,12 @@ All models are evaluated using:
 
 ## 1.1 Baseline Models (No Temporal Pooling, No Class Weights)
 
-| Model | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| Audio Baseline | **0.4705**  | **0.3353** |
-| Text Baseline | **0.6352**| **0.6076** |
-| Early Fusion Baseline | **0.6356**  | **0.6030** |
-| Late Fusion Baseline | **0.6165**  | **0.5539** |
+| Model                 | Accuracy  | Weighted F1|
+|-----------------------|-----------|------------|
+| Audio Baseline        | **0.4705**| **0.3353** |
+| Text Baseline         | **0.6352**| **0.6076** |
+| Early Fusion Baseline | **0.6356**| **0.6030** |
+| Late Fusion Baseline  | **0.6165**| **0.5539** |
 
 ### Per-Class F1 (Baseline)
 
@@ -45,12 +45,12 @@ All models are evaluated using:
 
 ## 1.2 Improved Models (Temporal Pooling + Class Weights)
 
-| Model | Temporal Pooling | Class Weights | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| Audio | ✅ | ✅ | **0.3483** | **0.3276** |
-| Text  | ❌ | ✅ | **0.5647** | **0.5849** |
-| Early Fusion | ✅ | ✅ | **0.5640** | **0.6009** |
-| Late Fusion  | ✅ | ✅ | **0.5916** | **0.6009** |
+| Model         | Temporal Pooling | Class Weights | Accuracy   | Weighted F1|
+|---------------|------------------|---------------|------------|------------|
+| Audio         | ✅               | ✅           | **0.3483** | **0.3276** |
+| Text          | ❌               | ✅           | **0.5647** | **0.5849** |
+| Early Fusion  | ✅               | ✅           | **0.5640** | **0.6009** |
+| Late Fusion   | ✅               | ✅           | **0.5916** | **0.6009** |
 
 ### Per-Class F1 (Improved)
 
@@ -64,12 +64,12 @@ All models are evaluated using:
 
 ## 1.3 Improvement over Baseline
 
-| Model | Baseline F1 | TP + CW F1 | Improvement |
-|------|-------------|------------|-------------|
-| Audio | 0.3353 | 0.3276 | **-0.0077** |
-| Text | 0.6076 | 0.5849 | **-0.0227** |
-| Early Fusion | 0.6030 | 0.6009 | **-0.0021** |
-| Late Fusion | 0.5539 | 0.6009 | **+0.0470** |
+| Model         | Baseline F1 | TP + CW F1 | Improvement |
+|---------------|-------------|------------|-------------|
+| Audio         | 0.3353      | 0.3276     | **-0.0077** |
+| Text          | 0.6076      | 0.5849     | **-0.0227** |
+| Early Fusion  | 0.6030      | 0.6009     | **-0.0021** |
+| Late Fusion   | 0.5539      | 0.6009     | **+0.0470** |
 
 ### Analysis
 
@@ -85,10 +85,10 @@ All models are evaluated using:
 
 Audio models trained on MELD were evaluated on unseen SEAC speakers to measure cross-dataset generalization under domain shift (English → Serbian).
 
-| Model | Temporal Pooling | Class Weights | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| MELD Audio Baseline | ❌ | ❌ | **0.2040** | **0.0691** |
-| MELD Audio (TP + CW) | ✅ | ✅ | **0.2508** | **0.1686** |
+| Model                 | Temporal Pooling | Class Weights   | Accuracy   | Weighted F1|
+|-----------------------|------------------|-----------------|------------|------------|
+| MELD Audio Baseline   | ❌               | ❌             | **0.2040** | **0.0691** |
+| MELD Audio (TP + CW)  | ✅               | ✅             | **0.2508** | **0.1686** |
 
 
 ### Confusion Matrix — MELD Audio Baseline (MELD → SEAC)
@@ -116,10 +116,10 @@ Audio models trained on MELD were evaluated on unseen SEAC speakers to measure c
 Audio models initialized from MELD were fine-tuned on SEAC using the remaining speakers to perform domain adaptation and improve cross-speaker robustness.
 
 ## Fine-Tuned Audio — Baseline and Temporal Pooling + Class Weights
-| Model | Temporal Pooling | Class Weights | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| Fine-Tuned Audio Baseline | ❌ | ❌ | **0.7107** | **0.7130** |
-| Fine-Tuned Audio (TP + CW) | ✅ | ✅ | **0.6672** | **0.6730** |
+| Model                         | Temporal Pooling | Class Weights   | Accuracy   | Weighted F1|
+|-------------------------------|------------------|-----------------|------------|------------|
+| Fine-Tuned Audio Baseline     | ❌               | ❌             | **0.7107** | **0.7130** |
+| Fine-Tuned Audio (TP + CW)    | ✅               | ✅             | **0.6672** | **0.6730** |
 
 ### Confusion Matrix — Fine-Tuned Audio Baseline
 
@@ -144,10 +144,10 @@ Audio models initialized from MELD were fine-tuned on SEAC using the remaining s
 
 Fine-tuned SEAC models were evaluated back on the original MELD test set to assess cross-domain retention after domain adaptation.
 
-| Model | Temporal Pooling | Class Weights | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| Fine-Tuned Audio Baseline | ❌ | ❌ | **0.1893** | **0.1895** |
-| Fine-Tuned Audio (TP + CW) | ✅ | ✅ | **0.2073** | **0.2112** |
+| Model                         | Temporal Pooling  | Class Weights  | Accuracy   | Weighted F1|
+|-------------------------------|-------------------|----------------|------------|------------|
+| Fine-Tuned Audio Baseline     | ❌                | ❌            | **0.1893** | **0.1895** |
+| Fine-Tuned Audio (TP + CW)    | ✅                | ✅            | **0.2073** | **0.2112** |
 
 ### Confusion Matrix — Back-Transfer (Best Model)
 
@@ -166,16 +166,16 @@ Fine-tuned SEAC models were evaluated back on the original MELD test set to asse
 
 # Model Comparison
 
-| Model | Temporal Pooling | Class Weights | Accuracy | Weighted F1 |
-|-------|----------|-------------|
-| MELD Audio Baseline | ❌ | ❌ | **0.4705** | **0.3353** |
-| MELD Audio (TP + CW)  | ✅ | ✅ | **0.3483** | **0.3276** |
-| MELD → SEAC (no fine-tuning) | ❌ | ❌ | **0.2040** | **0.0691** |
-| MELD → SEAC (no fine-tuning, TP + CW)  | ✅ | ✅ | **0.2508** | **0.1686** |
-| Fine-Tuned Audio Baseline | ❌ | ❌ | **0.7107** | **0.7130** |
-| Fine-Tuned Audio (TP + CW) | ✅ | ✅ | **0.6672** | **0.6730** |
-| SEAC → MELD | ❌ | ❌ | **0.1893** | **0.1895** |
-| SEAC → MELD (TP + CW) | ✅ | ✅ | **0.2073** | **0.2112** |
+| Model                                 | Temporal Pooling  | Class Weights | Accuracy   | Weighted F1 |
+|---------------------------------------|------------------ |---------------|------------|-------------|
+| MELD Audio Baseline                   | ❌                | ❌           | **0.4705** | **0.3353**  |
+| MELD Audio (TP + CW)                  | ✅                | ✅           | **0.3483** | **0.3276**  |
+| MELD → SEAC (no fine-tuning)          | ❌                | ❌           | **0.2040** | **0.0691**  |
+| MELD → SEAC (no fine-tuning, TP + CW) | ✅                | ✅           | **0.2508** | **0.1686**  |
+| Fine-Tuned Audio Baseline             | ❌                | ❌           | **0.7107** | **0.7130**  |
+| Fine-Tuned Audio (TP + CW)            | ✅                | ✅           | **0.6672** | **0.6730**  |
+| SEAC → MELD                           | ❌                | ❌           | **0.1893** | **0.1895**  |
+| SEAC → MELD (TP + CW)                 | ✅                | ✅           | **0.2073** | **0.2112**  |
 
 ---
 
@@ -197,3 +197,4 @@ Key visualizations included in this repository:
     - Per-class F1 comparisons across MELD models
     - Cross-dataset and fine-tuning performance comparisons
 Additional detailed plots are available in experiment notebooks.
+---
